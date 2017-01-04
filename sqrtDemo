@@ -1,0 +1,39 @@
+package com.test;
+
+public class Demo {
+
+	
+	public static void main(String[] args){
+		
+		double i=sqrt(2,0.01);
+
+		System.out.println(i);
+	}
+	
+	public static double sqrt(int v,double t) {
+		
+		double r=0;
+		double s=v,top=v,under=0;
+		int i=0;
+		System.out.println("start");
+		
+		System.out.println("r="+r+"\ts="+s+"\ttop="+top+"\tunder="+under);
+		while(top-under>t){
+			i++;
+			System.out.println("第"+i+"次循环");
+			
+			r=s/2+under;
+			if(Math.pow(r,2)<v){
+				under=r;
+			}else{
+				top=r;
+			}
+			s=s/2;
+			
+			System.out.println("r="+r+"\ts="+s+"\ttop="+top+"\tunder="+under);
+		}
+		
+		System.out.println("end");
+		return r;
+	}
+}
